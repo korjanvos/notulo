@@ -1,0 +1,8 @@
+.gradle
+.idea
+
+client/.gradle
+client/dist
+client/node_modules
+
+server/build

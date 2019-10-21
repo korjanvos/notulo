@@ -1,0 +1,27 @@
+plugins {
+    id 'com.github.node-gradle.node' version '2.1.1'
+}
+
+node {
+    version = '12.11.1'
+    npmVersion = '6.12.0'
+    download = true
+}
+
+task runClient(type: NpmTask, dependsOn: 'npmInstall') {
+    group = 'application'
+    description = 'Start the client application.'
+    args = ['run', 'start']
+}
+
+task buildClient(type: NpmTask, dependsOn: 'npmInstall') {
+    group = 'build'
+    description = 'Build the client bundle.'
+    args = ['run', 'build']
+}
+
+task testClient(type: NpmTask, dependsOn: 'npmInstall') {
+    group = 'verification'
+    description = 'Run the unit tests of the client.'
+    args = ['run', 'test']
+}

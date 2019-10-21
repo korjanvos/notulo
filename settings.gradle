@@ -1,0 +1,3 @@
+rootProject.name = 'notulo'
+include('client')
+include('server')
